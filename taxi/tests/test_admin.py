@@ -57,6 +57,5 @@ class DriverAdminTests(TestCase):
             "last_name": "Driver",
             "password": "newpassword",
         })
-
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "This field is required")

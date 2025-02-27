@@ -58,7 +58,7 @@ class ModelsTests(TestCase):
         self.assertTrue(self.driver.check_password(self.password))
         self.assertEqual(self.driver.first_name, self.first_name)
         self.assertEqual(self.driver.last_name, self.last_name)
-        self.assertTrue(self.driver.license_number, self.license_number)
+        self.assertEqual(self.driver.license_number, self.license_number)
 
     def test_driver_str(self):
         self.assertEqual(
