@@ -31,7 +31,7 @@ class PrivateManufacturerTest(TestCase):
         self.assertEqual(response.status_code, 200)
         manufacturers = Manufacturer.objects.all()
         self.assertEqual(
-            list(response.context["manufacturer-list"]),
+            list(response.context["manufacturer_list"]),
             list(manufacturers),
         )
         self.assertTemplateUsed(

@@ -21,11 +21,6 @@ class DriverAdminTests(TestCase):
             license_number="XYZ12345"
         )
 
-        self.user = get_user_model().objects.create_user(
-            username="regularuser",
-            password="userpassword"
-        )
-
     def test_license_number_listed(self):
         url = reverse("admin:taxi_driver_changelist")
         response = self.client.get(url)
@@ -48,7 +43,7 @@ class DriverAdminTests(TestCase):
 
     def test_regular_user_cannot_access_admin(self):
         self.client.logout()
-        self.client.force_login(self.user)
+        self.client.force_login(self.driver)
         url = reverse("admin:taxi_driver_changelist")
         response = self.client.get(url)
 
